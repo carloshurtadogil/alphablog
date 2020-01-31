@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Alpha Blog</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+
+  </head>
+
+  <body>
+
+    <nav class='navbar navbar-inverse'>
+      <div class='container-fluid'>
+
+        <div class='navbar-header'>
+          <a class='navbar-brand' href='javascript:void(0)'>AlphaBlog</a>
+        </div>
+
+        <ul class='nav navbar-nav'>
+        
+          <li>
+            <%= link_to 'Home', root_path %>
+          </li>
+
+          <li class='active'>
+            <%= link_to 'About', about_path %>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class='text-center'>
+      <h1 class='display-1'>Create an Article</h1>
+    </div>
+      
+    <%# Form fields for a new article %>
+
+    <%= form_for @article do |f| %>
+
+      <p>
+        <%= f.label :title %>
+        <br/>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :description %>
+        
+        <br/>
+        <%= f.text_area :description %>
+
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+
+    <% end %>
+
+  </body>
+</html>
+
+
+
+<%# tags for ruby code %>

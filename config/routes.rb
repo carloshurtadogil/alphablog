@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   
   # about route
   get 'about', to: 'pages#about'
+
+  # resources creates CRUD paths
+  resources :articles
 end
