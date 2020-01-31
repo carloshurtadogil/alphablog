@@ -36,30 +36,52 @@
     <div class='text-center'>
       <h1 class='display-1'>Create an Article</h1>
     </div>
-      
-    <%# Form fields for a new article %>
 
-    <%= form_for @article do |f| %>
+    <div class='container'>
 
-      <p>
-        <%= f.label :title %>
-        <br/>
-        <%= f.text_field :title %>
-      </p>
+      <%# Row to display any errors %>
+      <div class='row'>
 
-      <p>
-        <%= f.label :description %>
-        
-        <br/>
-        <%= f.text_area :description %>
+        <% if @article.errors.any? %>
+          <h3>The following errors prevented the article from getting created</h3>
+          <ul>
+            <% @article.errors.full_messages.each do |msg| %>
+              <li> <%= msg %> </li>
+            <% end %>
+          </ul>
+        <% end %>
 
-      </p>
+      </div>
 
-      <p>
-        <%= f.submit %>
-      </p>
+      <div class='row justify-content-center'>
+        <%# Form fields for a new article %>
 
-    <% end %>
+        <div class='col-6'>
+          <%= form_for @article do |f| %>
+
+            <p>
+              <%= f.label :title %>
+              <br/>
+              <%= f.text_field :title %>
+            </p>
+
+            <p>
+              <%= f.label :description %>
+              
+              <br/>
+              <%= f.text_area :description %>
+
+            </p>
+
+            <p>
+              <%= f.submit %>
+            </p>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
 
   </body>
 </html>
