@@ -19,6 +19,23 @@ class ArticlesController < ApplicationController
 
   end
 
+  # Allows for the revision of an article
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  # Updates the article if any new changes are made
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      flash[:notice] = "Article was updated successfully"
+      redirect_to article_path(@article) # show udpated article
+    else # default case to return to edit page 
+      render 'edit'
+    end
+  end
+
   # Display the information found in the article
   def show
     @article = Article.find(params[:id])
