@@ -1,37 +1,26 @@
-<!DOCTYPE html>
-<html lang='en'>
+<div class='row'>
+  <div class='text-center'>
+    <h1 class='display-1'>Showing selected article</h1>
+  </div>
+</div>
 
-  <body>
+<div class='row'>
+  <p>Title: <%= @article.title %></p>
+</div>
 
-    <div class='container'>
+<div class='row'>
+  <p>Description: <%= @article.description %></p>
+</div>
 
-      <div class='row'>
-        <div class='text-center'>
-          <h1 class='display-1'>Showing selected article</h1>
-        </div>
-      </div>
-
-      <div class='row'>
-        <p>Title: <%= @article.title %></p>
-      </div>
-
-      <div class='row'>
-        <p>Description: <%= @article.description %></p>
-      </div>
-
-      <div class='row'>
-        <div class='btn btn-secondary'>
-          <%= link_to 'Edit Article', edit_article_path(@article) %>
-        </div>
-        |
-        <div class='btn btn-secondary'>
-          <%= link_to 'Back to Articles List', articles_path %>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
-
+<div class='row'>
+  <div class='btn btn-secondary'>
+    <%= link_to 'Edit Article', edit_article_path(@article) %>
+  </div>
+  |
+  <div class='btn btn-secondary'>
+    <%= link_to 'Back to Articles List', articles_path %>
+  </div>
+</div>
 
 
 <%# tags for ruby code %>

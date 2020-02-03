@@ -1,48 +1,39 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <body>
-    <div class='container'>
+<div class='row'>
+  <div class='text-center'>
+    <h1 class='display-1 p-3'>Listing All Articles</h1>
+  </div>
+</div>
 
-      <div class='row'>
-        <div class='text-center'>
-          <h1 class='display-1 p-3'>Listing All Articles</h1>
-        </div>
-      </div>
+<div class='row'>
+  <div class='btn btn-secondary'>
+    <%= link_to 'Create New Article', new_article_path%>
+  </div>
+</div>
 
-      <div class='row'>
-        <div class='btn btn-secondary'>
-          <%= link_to 'Create New Article', new_article_path%>
-        </div>
-      </div>
+<div class='row'>
+  <table class='table table-hover'>
+    <thead class='thead-dark'>
+      <tr>
+        <th scope='col'>Article Title</th>
+        <th scope='col'>Description</th>
+      </tr>
+    </thead>
 
-      <div class='row'>
-        <table class='table table-hover'>
-          <thead class='thead-dark'>
-            <tr>
-              <th scope='col'>Article Title</th>
-              <th scope='col'>Description</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @articles.each do |article|%>
-                <tr>
-                  <td><%= article.title %></td>
-                  <td><%= article.description %></td>
-                  <td><%= link_to 'Edit', edit_article_path(article) %></td>
-                  <td><%= link_to 'Show', article_path(article) %></td>
-                  <%# Delete action specified %>
-                  <%# Confirmation requested %>
-                  <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td> 
-                </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </body>
-</html>
+    <tbody>
+      <% @articles.each do |article|%>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= article.description %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Show', article_path(article) %></td>
+            <%# Delete action specified %>
+            <%# Confirmation requested %>
+            <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td> 
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 
 

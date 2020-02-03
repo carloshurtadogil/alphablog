@@ -12,12 +12,14 @@
   <body>
 
     <%# Navigation bar for all pages%>
-    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navigation' %>
 
     <%# Renders any messages received for the user%>
     <%= render 'layouts/messages' %>
 
-    <%# Renders all views %>
-    <%= yield %>
+    <div class='container'>
+      <%# Renders all views %>
+      <%= yield %>
+    </div>
   </body>
 </html>
