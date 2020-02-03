@@ -11,30 +11,6 @@
   </head>
 
   <body>
-
-    <nav class='navbar navbar-inverse'>
-      <div class='container-fluid'>
-
-        <div class='navbar-header'>
-          <a class='navbar-brand' href='javascript:void(0)'>AlphaBlog</a>
-        </div>
-
-        <ul class='nav navbar-nav'>
-        
-          <li>
-            <%= link_to 'Home', root_path %>
-          </li>
-
-          <li>
-            <%= link_to 'About', about_path %>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
-
-    
-
     <div class='container'>
 
       <div class='row'>
@@ -65,6 +41,9 @@
                   <td><%= article.description %></td>
                   <td><%= link_to 'Edit', edit_article_path(article) %></td>
                   <td><%= link_to 'Show', article_path(article) %></td>
+                  <%# Delete action specified %>
+                  <%# Confirmation requested %>
+                  <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td> 
                 </tr>
             <% end %>
           </tbody>

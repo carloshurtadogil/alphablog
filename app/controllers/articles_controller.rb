@@ -45,6 +45,15 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  # Function to delete articles from the database
+  def destroy
+    @article = Article.find(params[:id])
+
+    @article.destroy #Destroy
+    flash[:notice] = "Article was deleted successfully" # Notify
+    redirect_to articles_path #Redirect
+  end
+
   private
     # Clean the article parameters
     def article_params
