@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-
+  # Initialize the article variable with a given parameter for specified methods only
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  
   def index
     @articles = Article.all
   end
@@ -25,13 +27,12 @@ class ArticlesController < ApplicationController
 
   # Allows for the revision of an article
   def edit
-    @article = Article.find(params[:id])
+    
   end
 
   # Updates the article if any new changes are made
   def update
-    @article = Article.find(params[:id])
-
+    
     if @article.update(article_params)
       flash[:notice] = "Article was updated successfully"
       redirect_to article_path(@article) # show udpated article
@@ -42,13 +43,12 @@ class ArticlesController < ApplicationController
 
   # Display the information found in the article
   def show
-    @article = Article.find(params[:id])
+    
   end
 
   # Function to delete articles from the database
   def destroy
-    @article = Article.find(params[:id])
-
+    
     @article.destroy #Destroy
     flash[:notice] = "Article was deleted successfully" # Notify
     redirect_to articles_path #Redirect
@@ -58,5 +58,10 @@ class ArticlesController < ApplicationController
     # Clean the article parameters
     def article_params
       params.require(:article).permit(:title, :description)
+    end
+
+    # Retrieve an article
+    def set_article
+      @article = Article.find(params[:id])
     end
 end
