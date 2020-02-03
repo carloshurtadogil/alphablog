@@ -53,30 +53,35 @@
         <div class='row justify-content-center'>
         <%# Form fields for a new article %>
 
-        <div class='col-6'>
-          <%= form_for @article do |f| %>
+          <div class='col-6'>
+            <%= form_for @article do |f| %>
 
-            <p>
-              <%= f.label :title %>
-              <br/>
-              <%= f.text_field :title %>
-            </p>
+              <p>
+                <%= f.label :title %>
+                <br/>
+                <%= f.text_field :title %>
+              </p>
 
-            <p>
-              <%= f.label :description %>
-              
-              <br/>
-              <%= f.text_area :description %>
+              <p>
+                <%= f.label :description %>
+                
+                <br/>
+                <%= f.text_area :description %>
 
-            </p>
+              </p>
 
-            <p>
-              <%= f.submit %>
-            </p>
+              <p>
+                <%= f.submit %>
+              </p>
 
-          <% end %>
+            <% end %>
+          </div>
+
         </div>
-      </div>
+
+        <div class='row'>
+          <%= link_to 'Return to Articles', articles_path%>
+        </div>
 
       </div>
     </div>

@@ -33,31 +33,44 @@
       </div>
     </nav>
 
+    
+
     <div class='container'>
 
       <div class='row'>
         <div class='text-center'>
-          <h1 class='display-1'>Showing selected article</h1>
+          <h1 class='display-1 p-3'>Listing All Articles</h1>
         </div>
-      </div>
-
-      <div class='row'>
-        <p>Title: <%= @article.title %></p>
-      </div>
-
-      <div class='row'>
-        <p>Description: <%= @article.description %></p>
       </div>
 
       <div class='row'>
         <div class='btn btn-secondary'>
-          <%= link_to 'Edit Article', edit_article_path(@article) %>
-        </div>
-        |
-        <div class='btn btn-secondary'>
-          <%= link_to 'Back to Articles List', articles_path %>
+          <%= link_to 'Create New Article', new_article_path%>
         </div>
       </div>
+
+      <div class='row'>
+        <table class='table table-hover'>
+          <thead class='thead-dark'>
+            <tr>
+              <th scope='col'>Article Title</th>
+              <th scope='col'>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @articles.each do |article|%>
+                <tr>
+                  <td><%= article.title %></td>
+                  <td><%= article.description %></td>
+                  <td><%= link_to 'Edit', edit_article_path(article) %></td>
+                  <td><%= link_to 'Show', article_path(article) %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </body>
 </html>
