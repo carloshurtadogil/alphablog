@@ -4,6 +4,31 @@ $navbar-default-bg: #343A40;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -20,4 +45,27 @@ $navbar-default-bg: #343A40;
 
 .center {
   text-align: center;
+}
+
+.jumbotron-home {
+  background-image: asset-url('fog.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+.jumbotron h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  border-color: black;
+}
+
+.btn-xlarge:hover {
+  background-color: darkslategrey;
 }
