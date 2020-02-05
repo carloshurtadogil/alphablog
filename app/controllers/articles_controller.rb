@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      flash[:notice] = "Article was successfully created!"
+      flash[:success] = "Article was successfully created!"
       redirect_to article_path(@article)
     else # default case for when article experiences error during save
       render 'new'
@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   def update
     
     if @article.update(article_params)
-      flash[:notice] = "Article was updated successfully"
+      flash[:success] = "Article was updated successfully"
       redirect_to article_path(@article) # show udpated article
     else # default case to return to edit page 
       render 'edit'
@@ -50,7 +50,8 @@ class ArticlesController < ApplicationController
   def destroy
     
     @article.destroy #Destroy
-    flash[:notice] = "Article was deleted successfully" # Notify
+    #danger will give the alert a red background
+    flash[:danger] = "Article was deleted successfully" # Notify
     redirect_to articles_path #Redirect
   end
 
