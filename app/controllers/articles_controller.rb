@@ -32,7 +32,6 @@ class ArticlesController < ApplicationController
 
   # Updates the article if any new changes are made
   def update
-    
     if @article.update(article_params)
       flash[:success] = "Article was updated successfully"
       redirect_to article_path(@article) # show udpated article
