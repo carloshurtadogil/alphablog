@@ -4,6 +4,16 @@ $navbar-default-bg: #343A40;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+.btn-xlarge {
+  font-size: 1.7em;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  border-color: black;
+}
+
+.btn-xlarge:hover {
+  background-color: darkslategrey;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -84,12 +94,7 @@ footer ul li {
   font-weight: bold;
 }
 
-.btn-xlarge {
-  font-size: 1.7em;
-  background-color: rgba($color: #000000, $alpha: 0.2);
-  border-color: black;
-}
-
-.btn-xlarge:hover {
-  background-color: darkslategrey;
+.listing {
+  list-style: none;
+  padding-left: 0;
 }

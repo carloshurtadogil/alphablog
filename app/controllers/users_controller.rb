@@ -39,6 +39,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  # function to display all users\
+  def index
+    @users = User.all
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
