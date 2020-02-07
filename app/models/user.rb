@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :articles
+  #dependent destroys all articles associated with the current user
+  has_many :articles, dependent: :destroy
 
   # sets the email input to lowercase before moving further with its function
   before_save { self.email = email.downcase }
