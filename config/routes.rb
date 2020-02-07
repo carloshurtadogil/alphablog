@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   # about route
   get 'about', to: 'pages#about'
 
+  # routes for login form
+
+  get 'login', to: 'sessions#new'
+
+  post 'login', to: 'sessions#create'
+
+  delete 'logout', to: 'sessions#destroy'
+
   # article resources creates CRUD paths
   resources :articles
 end

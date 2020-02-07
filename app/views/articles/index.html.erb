@@ -1,8 +1,11 @@
 <h1 align='center'>Listing All Articles</h1>
 
-<div class='center'>
-  <%= link_to 'Create New Article', new_article_path, class: 'btn btn-lg btn-success'%>
+<div align='center'>
+  <%= will_paginate %>
 </div>
 
+<%= render 'article', obj: @articles %>
 
-<%= render 'article', obj: @articles%>
+<div align='center'>
+  <%= will_paginate %>
+</div>
