@@ -5,10 +5,18 @@
       <%= link_to 'AlphaBlog', root_path, class: 'navbar-brand', id: 'logo'%>
     </div>
 
-    <ul class='nav navbar-nav'>
+    <ul class='nav navbar-nav navbar-left'>
 
       <li class='nav-item'>
         <%= link_to 'Articles', articles_path %>
+      </li>
+
+    </ul>
+
+    <ul class='nav navbar-nav navbar-right'>
+
+      <li>
+        <%= link_to 'Log out', logout_path, method: :delete %>
       </li>
 
     </ul>
