@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   # require a user for certain functions
   before_action :set_user, only: [:edit, :update, :show]
 
+  # Ensure a user is the owner of the account to make edits and updates
+  before_action :require_same_user, only: [:edit, :update]
+
   # function for new users
   def new
     @user = User.new
@@ -52,5 +55,12 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if !logged_in? && current_user != @user
+      flash[:danger] = "You can only edit your own account"
+      redirect_to root_path
+    end
   end
 end
