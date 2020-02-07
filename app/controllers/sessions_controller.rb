@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  # for the page itself
+    # for the page itself
   def new
 
   end
