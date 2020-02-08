@@ -23,4 +23,8 @@ Rails.application.routes.draw do
 
   # article resources creates CRUD paths
   resources :articles
+
+  # category resources creates CRUD paths
+  # Exception allows us to not create a destroy function
+  resources :categories, except: [:destroy]
 end
