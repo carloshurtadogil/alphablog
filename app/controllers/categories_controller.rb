@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   # function that carries out operations for the index page
   def index
-    @categories = Category.all
+    @categories = Category.paginate(page: params[:page], per_page: 5)
   end
 
   # function that carries out operations for the 'New Category' page
